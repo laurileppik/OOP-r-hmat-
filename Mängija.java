@@ -4,9 +4,9 @@ public class Mängija {
     private Ruum asukoht;
     private ArrayList<Asi> seljakott;
 
-    public Mängija(Ruum asukoht, ArrayList<Asi> seljakott) {
+    public Mängija(Ruum asukoht) {
         this.asukoht = asukoht;
-        this.seljakott = seljakott;
+        this.seljakott = new ArrayList<Asi>();
     }
 
     public Ruum getAsukoht() {
