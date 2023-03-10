@@ -23,4 +23,7 @@ public class Asi {
         this.kirjeldus = kirjeldus;
     }
 
+    public String toString() {
+        return nimi + ":" + kirjeldus;
+    }
 }
