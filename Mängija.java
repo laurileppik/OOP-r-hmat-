@@ -6,7 +6,7 @@ public class Mängija {
 
     public Mängija(Ruum asukoht) {
         this.asukoht = asukoht;
-        this.seljakott = new ArrayList<Asi>();
+        this.seljakott = new ArrayList<>();
     }
 
     public Ruum getAsukoht() {
@@ -32,7 +32,6 @@ public class Mängija {
     //Saad vaadata seljakotti
     public void vaataSeljakotti() {
         System.out.println("Seljakoti sisu: ");
-        System.out.println();
         if (seljakott.isEmpty())
             System.out.println("Seljakott on tühi.");
         for (Asi asi : seljakott) {
