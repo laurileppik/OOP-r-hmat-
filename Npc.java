@@ -1,2 +1,3 @@
-public class Npc {
+public interface Npc {
+    void vestle();
 }
