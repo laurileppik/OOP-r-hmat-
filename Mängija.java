@@ -13,6 +13,10 @@ public class Mängija {
         return asukoht;
     }
 
+    public void setAsukoht(Ruum asukoht) {
+        this.asukoht = asukoht;
+    }
+
     public ArrayList<Asi> getSeljakott() {
         return seljakott;
     }
@@ -34,6 +38,11 @@ public class Mängija {
         for (Asi asi : seljakott) {
             System.out.println(asi);
         }
+    }
+
+    public void liigu(Ruum uusAsukoht) {
+        asukoht = uusAsukoht;
+        System.out.println(asukoht.getRuumiKirjeldus());
     }
 }
 
