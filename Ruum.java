@@ -32,8 +32,17 @@ public class Ruum {
     }
 
     public String toString() {
-        if (!asjadRuumis.isEmpty())
-            return "Ruumis " + nimi + " on järgnevad asjad: " +asjadRuumis;
+        if (!asjadRuumis.isEmpty()) {
+            StringBuilder kirjeldustetaAsjad= new StringBuilder();
+            int asjadeLuger=1;
+            for (Asi asjad :asjadRuumis) {
+                kirjeldustetaAsjad.append(asjad.getNimi());
+                if (asjadeLuger!=asjadRuumis.size())
+                    kirjeldustetaAsjad.append(", ");
+                asjadeLuger++;
+            }
+            return "Ruumis " + nimi + " on järgnevad asjad: " + kirjeldustetaAsjad;
+        }
         return "Ruumis ei ole midagi mida sa kasutada saaksid.";
     }
 }
