@@ -35,7 +35,7 @@ public class Mängija {
         if (seljakott.isEmpty())
             System.out.println("Seljakott on tühi.");
         for (Asi asi : seljakott) {
-            System.out.println(asi);
+            System.out.println(asi.getNimi());
         }
     }
 
