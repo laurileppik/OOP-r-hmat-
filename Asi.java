@@ -11,16 +11,8 @@ public class Asi {
         return nimi;
     }
 
-    public void setNimi(String nimi) {
-        this.nimi = nimi;
-    }
-
     public String getKirjeldus() {
         return kirjeldus;
-    }
-
-    public void setKirjeldus(String kirjeldus) {
-        this.kirjeldus = kirjeldus;
     }
 
     public String toString() {

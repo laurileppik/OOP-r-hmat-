@@ -18,17 +18,8 @@ public class Ruum {
     public String getNimi() {
         return nimi;
     }
-
-    public void setNimi(String nimi) {
-        this.nimi = nimi;
-    }
-
     public String getRuumiKirjeldus() {
         return ruumiKirjeldus;
-    }
-
-    public void setRuumiKirjeldus(String ruumiKirjeldus) {
-        this.ruumiKirjeldus = ruumiKirjeldus;
     }
 
     //Hetkel kui ruumi läheme siis ütleb, et ei ole midagi mida kasutada saaksin, vb oleks hea teha nii et mitte midagi returniks.

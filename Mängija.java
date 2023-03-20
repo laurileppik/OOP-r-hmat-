@@ -39,6 +39,14 @@ public class Mängija {
         }
     }
 
+    public boolean kasSeljakotis(String otsitav) {
+        for (Asi asi: seljakott) {
+            if (asi.getNimi().equals(otsitav))
+                return true;
+        }
+        return false;
+    }
+
     public void liigu(Ruum uusAsukoht) {
         asukoht = uusAsukoht;
         System.out.println(asukoht.getRuumiKirjeldus());
