@@ -31,6 +31,7 @@ public class Ruum {
         this.ruumiKirjeldus = ruumiKirjeldus;
     }
 
+    //Hetkel kui ruumi läheme siis ütleb, et ei ole midagi mida kasutada saaksin, vb oleks hea teha nii et mitte midagi returniks.
     public String toString() {
         if (!asjadRuumis.isEmpty()) {
             StringBuilder kirjeldustetaAsjad= new StringBuilder();
