@@ -1,4 +1,4 @@
-public class Asi {
+public class Asi {// Klass asjade loomiseks
     private String nimi;
     private String kirjeldus;
 

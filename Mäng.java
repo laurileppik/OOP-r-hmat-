@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
@@ -30,10 +31,10 @@ public class Mäng {
         ruumid[4] = new Ruum("Kuristik", "Hüppasid kuristikku.", asjad);
         ruumid[5] = new Ruum("Kaljuäär", "Liigud mööda kaljuäärt.", asjad);
         ruumid[6] = new vihjegaRuum("Pime õõnsus", "Jõuad pimeda koopaõõnsuseni.", asjad, "Kuidas ma küll valgust saaksin.");
-        ruumid[7] = new Ruum("Uks kauguses", "Näed kauguses ust.", asjad);
+        ruumid[7] = new Ruum("Uks kauguses", "Näed kauguses ust. Tundub,et uksel on võtmeauk.", asjad);
     }
 
-    public static void algusEkraan(int n) {
+    public static void algusEkraan(int n) {// funktsioon algusekraani väljaprintimiseks
         System.out.println("*".repeat(n));
         for (int i = 0; i < n / 2; i++) {
             if (i == 0)
@@ -64,6 +65,10 @@ public class Mäng {
     }
 
     public static void main(String[] args) {
+        //Loon vestluspartneri
+        ArrayList<String> tegelaseVestlused = new ArrayList<>(Arrays.asList("1. Kes sa oled?", "2. Mida sa tahad? ", "3. Kõnni ära."));//tegelase loomine
+        Tegelane tegelane = new Tegelane("Peeter", tegelaseVestlused);
+
         algusEkraan(24);
         Mäng mäng = new Mäng();
         Mängija mängija = new Mängija(mäng.getRuumid()[0]);
@@ -76,7 +81,7 @@ public class Mäng {
         boolean mängKäib = true;
         int hetkeneRuum = 0;
 
-        while (mängKäib) {
+        while (mängKäib) {//siit algab while-loop, kus mäng käib
             String input = in.nextLine();
             String[] sõnad = input.split(" ");
             String käsk = sõnad[0];
@@ -104,6 +109,8 @@ public class Mäng {
                     if (hetkeneRuum == 3) {
                         System.out.println("Sul on 2 valikut: Saad minna mööda kaljuäärt edasi või proovida ennast alla libistada.");
                         hetkeneRuum++;
+                    }else if(hetkeneRuum == 1){
+                        System.out.println("Näed kedagi seismas");
                     }
                 }
             } else if (käsk.equalsIgnoreCase("t")) {
@@ -119,6 +126,9 @@ public class Mäng {
                 }
                 if (hetkeneRuum == 3) {
                     System.out.println("Sul on 2 valikut: Saad minna mööda kaljuäärt edasi või proovida ennast alla libistada.");
+                }
+                if (hetkeneRuum == 1) {
+                    System.out.println("Näed kedagi seismas");
                 }
 
             } else if (käsk.equalsIgnoreCase("seljakott")) {
@@ -198,7 +208,13 @@ public class Mäng {
                     System.out.println(((vihjegaRuum) mäng.getRuumid()[hetkeneRuum]).getVihje());
                 } else
                     System.out.println("Siin pole sulle ühtegi vihjet anda.");
-            } else {
+            } else if(käsk.equalsIgnoreCase("vestle")){// tegelasega vestlemine
+                if(hetkeneRuum == 1){
+                    tegelane.vestle(mängija);
+                }else{
+                    System.out.println("Siin ei ole kellegagi vestelda.");
+                }
+            }else {
                 System.out.println("Vigane sisend.");
             }
         }

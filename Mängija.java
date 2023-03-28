@@ -20,6 +20,9 @@ public class Mängija {
     public ArrayList<Asi> getSeljakott() {
         return seljakott;
     }
+    public void setSeljakott(ArrayList<Asi> seljakott) {
+        this.seljakott = seljakott;
+    }
 
     public void võtaAsi(Asi asi) {
         seljakott.add(asi);
