@@ -1,15 +1,28 @@
 Rühmatöö autorid on Lauri Leppik ja Kaur Veere.
 
-Idee oli luua lihtne mäng, nagu paarkümmend aastat tagasi esimesed tekstipõhised mängud olid. Vähe vihjeid ning peab palju katsetama, et aru saada, kuidas edasi liikuda ning mida üldse teha saab.
-Hindame, et mäng on võimalik lõpuni mängida ilma teadmisteta, kuid lahendusviisiks on: Leida tegelane, küsida ja vastata ta mõistatusele. Õigesti vastates annab tegelane mängijale võtme. Edasi tuleb liikuda ruumides ja leida tõrvik, et saaks ka pimedates ruumides edasi liikuda ning jõuda lõppu, kus saab ust võtmega avada ja mäng "võita".
+Objektorienteeritud programmeerimise kursuse raames oleme loonud projekti, milles idee oli luua lihtne tekstipõhine mäng, mis oleks ülesehituselt sarnane paarikümne aasta taguste samalaadsete mängudega. Mängudes oli tollal vähe vihjeid ning pidi palju katsetama, et aru saada, kuidas ning missugused käsud lubatud on. Programmi eesmärgiks on tekitada selle programmi kasutajale lõbus ajaveetmise (esialgsel projektil mitte küll väga pikk) võimalus. Hindame, et mäng on võimalik lõpuni mängida ilma teadmisteta, kuid lahendusviisiks on: Leida tegelane, küsida ja vastata ta mõistatusele. Õigesti vastates annab tegelane mängijale võtme. Edasi tuleb liikuda ruumides ja leida tõrvik, et saaks ka pimedates ruumides edasi liikuda ning jõuda lõppu, kus saab ust võtmega avada ja mäng "võita".
 
-klassikirjeldused:
+Kasutusjuhis:
 
-Ruum - Klass, et luua ruume. Igal ruumil on nimi, kirjeldus ja nimekiri asjadest, mis seal ruumis on, kui on. Seal on ka toString meetod, mis juhul kui ruumis on midagi, siis tagastab need asjad.
-vihjegaRuum - Klassi ruum alamklass, aga osadel ruumidel on ka vihje, mis antud klassiga lisatakse.
-Asi - Klass, et luua asju, mis ruumis või mängija seljakotis on.
-Mäng - Peaklass, kus initseeritakse mäng, mis tähendab algusekraani printimist ning kasutajaga suhtlemist ja vastavat reageerimist.
-Tegelane - Klass, kus luuakse tegelane, kellega saab suhelda. Klassis peamine funktsioon on vestle() läbi mille kogu vestlus toimub.
+Järgmisesse ruumi liikumiseks on käsk "edasi".
+Eelmisesse ruumi liikumiseks on käsk "tagasi".
+Seljakotis olevate esemete vaatamiseks on käsk kujul "seljakott".
+Eseme võtmiseks on käsk kujul "võta ____", kus ____ tähistab suvalist eset(võtta saab ainult ruumis olevat eset)
+Eseme vaatamiseks on käsk kujul "vaata ____", kus ____ tähistab suvalist eset(vaadata saab ainult seljakotis olevat eset)
+Käsk "libista" on kasutatav ainult ühes ruumis, kus väga hea õnne korral on võimalik koopast pääseda.
+Käsk "vihje" annab vajadusel vihje, kui hätta jääda.(Töötab ainult ruumides, kust pole võimalik edasi liikuda ilma lisaesemeteta)
+Käsk "vestle" annab võimaluse ruumis oleva tegelasega suhelda, juhul kui selles ruumis tegelane olemas on.
+Käsk "jookse" on käsk, mida ette ei anta, vaid mille rakendamisel mängija kaotab.
+Käsk "põgene" on 9)ga analoogne.
+Käsk "võti" on kasulik mängu lõpus mängu võitmiseks ning ka seda ei tutvustata alguses mängijale. Käsk tutvustatakse mängijale ainult juhul kui ta on juba võtme omandanud.
+Üldiselt käib mäng edasi/tagasi liikumise peale ning kui mängija jõuab punkti, kust on keeruline edasi saada, peab ta a) Välja mõtlema, kus ta enne midagi selle kohaga seonduvat nägi. (nt juhul kui on liiga pime, läheb tagasi tõrviku juurde ja võtab selle) b) Sama asi, aga mängija saab vihjet kasutada ja selle abil lõppu jõuda.
+
+Klassikirjeldused: 
+Ruum - Klass, et luua ruume. Igal ruumil on nimi, kirjeldus ja nimekiri asjadest, mis seal ruumis on, kui on. Seal on ka toString meetod, mis juhul kui ruumis on midagi, siis tagastab need asjad. 
+vihjegaRuum - Klassi ruum alamklass, aga osadel ruumidel on ka vihje, mis antud klassiga lisatakse. 
+Asi - Klass, et luua asju, mis ruumis või mängija seljakotis on. 
+Mäng - Peaklass, kus initseeritakse mäng, mis tähendab algusekraani printimist ning kasutajaga suhtlemist ja vastavat reageerimist. 
+Tegelane - Klass, kus luuakse tegelane, kellega saab suhelda. Klassis peamine funktsioon on vestle() läbi mille kogu vestlus toimub. 
 Mängija - Klass, kus on kõik mängija info koos vajalike funktsioonidega.
 
 Esialgu pidime looma Mängu klassi ning Mängija klassi ning sealt edasi saime hakata looma eraldi klasse, nii, et mäng töötas peale iga klassi lisamist.
@@ -18,6 +31,6 @@ Tegelesime projektiga enam-vähem samaväärselt ajas, kuid sisuline maht tuli v
 
 Peamisteks muredeks olid java klasside vaheline suhtlus ja sellest aru saamine ning programmi ülesehituse välja mõtlemine.
 
-Lõpptulemusega oleme suures pildis rahul sellega, et saime tänu projektile klassidest, nende loomisest ja nende omavahelisest suhtlusest paremini aru. Lõpptulemus ei ole päris see, mis me tahtsime, kuid võtsime esialgu liiga suure mahuga projekti ette.
+Lõpptulemuses oleme suures pildis rahul sellega, et saime tänu projektile klassidest, nende loomisest ja nende omavahelisest suhtlusest paremini aru. Lõpptulemus ei ole päris nii mahukas kui me tahtsime, kuid võtsime esialgu liiga suure mahuga projekti ette ning saadud lõpptulemust on hea edasi arendada.
 
-Testimiseks tegime esialgu iga klassi jaoks oma testklassi main meetodiga ning vastavalt sellele parandasime klassi ning peale seda lisasime mängu klassi vastava klassi osad ning parandasime klassi uuesti, et mängu tööle saada.
+Testimiseks tegime esialgu iga klassi jaoks oma testklassi main meetodiga ning vastavalt sellele parandasime klassi ning peale seda lisasime mängu klassi vastava klassi osad ning parandasime klassi uuesti, et mängu tööle saada. Lisaks sellele testisime erinevaid sisestusi mängu eri osades ning kontrollisime, et programm nendel õigesti töötaks.
