@@ -32,7 +32,9 @@ public class Mängija {
         seljakott.remove(asi);
     }
 
-    //Saad vaadata seljakotti
+    /** Meetod, mis prindib kõik seljakotis olevad asjad.
+     *
+     */
     public void vaataSeljakotti() {
         System.out.println("Seljakoti sisu: ");
         if (seljakott.isEmpty())
@@ -41,6 +43,12 @@ public class Mängija {
             System.out.println(asi.getNimi());
         }
     }
+
+    /** Meetod, mis tagastab, kas otsitav ese on seljakotis või mitte.
+     *
+     * @param otsitav Otsitav ese.
+     * @return Tõeväärtus vastavalt sellele, kas otsitav ese on seljakotis või mitte.
+     */
 
     public boolean kasSeljakotis(String otsitav) {
         for (Asi asi: seljakott) {
