@@ -46,7 +46,10 @@ public class Tegelane{//Tegelase klass, millega luuakse tegelane, kellega saab v
                 String vastus = sc.nextLine();
                 if(vastus.equalsIgnoreCase("sibul")){
                     System.out.println("Õige vastus, siin on sulle võti.");
+                    System.out.println("(Võtit saab nüüd kusagil kasutada kirjutades \"võti\")");
                     tempSeljakott.add(võti);
+                    vestlused.remove(3);
+                    vestlused.remove(1);
                     mängija.setSeljakott(tempSeljakott);
                 }else{
                     System.out.println("Vale vastus!");

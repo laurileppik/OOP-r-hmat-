@@ -214,6 +214,13 @@ public class Mäng {
                 }else{
                     System.out.println("Siin ei ole kellegagi vestelda.");
                 }
+            }else if(käsk.equalsIgnoreCase("võti")){
+                if(hetkeneRuum == 7){
+                    System.out.println("Uks avanes, said koopast välja ning võitsid mängu!");
+                    break;
+                }else{
+                    System.out.println("Siin ei saa võtit kasutada.");
+                }
             }else {
                 System.out.println("Vigane sisend.");
             }

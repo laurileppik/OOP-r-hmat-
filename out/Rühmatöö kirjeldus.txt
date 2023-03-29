@@ -1,0 +1,23 @@
+Rühmatöö autorid on Lauri Leppik ja Kaur Veere.
+
+Idee oli luua lihtne mäng, nagu paarkümmend aastat tagasi esimesed tekstipõhised mängud olid. Vähe vihjeid ning peab palju katsetama, et aru saada, kuidas edasi liikuda ning mida üldse teha saab.
+Hindame, et mäng on võimalik lõpuni mängida ilma teadmisteta, kuid lahendusviisiks on: Leida tegelane, küsida ja vastata ta mõistatusele. Õigesti vastates annab tegelane mängijale võtme. Edasi tuleb liikuda ruumides ja leida tõrvik, et saaks ka pimedates ruumides edasi liikuda ning jõuda lõppu, kus saab ust võtmega avada ja mäng "võita".
+
+klassikirjeldused:
+
+Ruum - Klass, et luua ruume. Igal ruumil on nimi, kirjeldus ja nimekiri asjadest, mis seal ruumis on, kui on. Seal on ka toString meetod, mis juhul kui ruumis on midagi, siis tagastab need asjad.
+vihjegaRuum - Klassi ruum alamklass, aga osadel ruumidel on ka vihje, mis antud klassiga lisatakse.
+Asi - Klass, et luua asju, mis ruumis või mängija seljakotis on.
+Mäng - Peaklass, kus initseeritakse mäng, mis tähendab algusekraani printimist ning kasutajaga suhtlemist ja vastavat reageerimist.
+Tegelane - Klass, kus luuakse tegelane, kellega saab suhelda. Klassis peamine funktsioon on vestle() läbi mille kogu vestlus toimub.
+Mängija - Klass, kus on kõik mängija info koos vajalike funktsioonidega.
+
+Esialgu pidime looma Mängu klassi ning Mängija klassi ning sealt edasi saime hakata looma eraldi klasse, nii, et mäng töötas peale iga klassi lisamist.
+
+Tegelesime projektiga enam-vähem samaväärselt ajas, kuid sisuline maht tuli vastavalt oskustele erinev. Muutsime mõlemad kõiki klasse vastavalt vajadusele. Hinnanguliselt kulutasime kõike arvestades mõlemad umbes 13-15 tundi.
+
+Peamisteks muredeks olid java klasside vaheline suhtlus ja sellest aru saamine ning programmi ülesehituse välja mõtlemine.
+
+Lõpptulemusega oleme suures pildis rahul sellega, et saime tänu projektile klassidest, nende loomisest ja nende omavahelisest suhtlusest paremini aru. Lõpptulemus ei ole päris see, mis me tahtsime, kuid võtsime esialgu liiga suure mahuga projekti ette.
+
+Testimiseks tegime esialgu iga klassi jaoks oma testklassi main meetodiga ning vastavalt sellele parandasime klassi ning peale seda lisasime mängu klassi vastava klassi osad ning parandasime klassi uuesti, et mängu tööle saada.
