@@ -22,7 +22,10 @@ public class Ruum {
         return ruumiKirjeldus;
     }
 
-    //Hetkel kui ruumi läheme siis ütleb, et ei ole midagi mida kasutada saaksin, vb oleks hea teha nii et mitte midagi returniks.
+    /** Meetod, mis, juhul kui ruum pole tühi leiab ruumis olevad asjad.
+     *
+     * @return Tagastab asjad, mis on ruumis eeldusel, et ruumis on asju.(Kui ei ole tagastab vastava teate.)
+     */
     public String toString() {
         if (!asjadRuumis.isEmpty()) {
             StringBuilder kirjeldustetaAsjad= new StringBuilder();
