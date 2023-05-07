@@ -50,6 +50,7 @@ public class Tegelane {//Tegelase klass, millega luuakse tegelane, kellega saab 
                     System.out.println("Head aega!");
                     break;
                 } else if (sisend == 4) {
+                    Mäng.setKäskeKokku(Mäng.getKäskeKokku()+1);
                     System.out.println("Silmad paneb nutma, aga südant ei liiguta.");
                     String vastus = sc.nextLine();
                     if (vastus.equalsIgnoreCase("sibul")) {
@@ -68,6 +69,7 @@ public class Tegelane {//Tegelase klass, millega luuakse tegelane, kellega saab 
             } catch (Exception e) {
                 System.out.println("Vale sisend.");
             }
+            Mäng.setKäskeKokku(Mäng.getKäskeKokku()+1);
         }
     }
 }

@@ -1,0 +1,25 @@
+Lauri:
+Tegid kokku 13 käiku mängu lõpetamiseks.
+Aega läks 0 minutit 26 sekundit.
+Kogusid mängu jooksul 2 eset.
+Võitsid mängu.
+Juss:
+Tegid kokku 4 käiku mängu lõpetamiseks.
+Aega läks 0 minutit 14 sekundit.
+Kogusid mängu jooksul 0 eset.
+Kaotasid mängu.
+Mark:
+Tegid kokku 13 käiku mängu lõpetamiseks.
+Aega läks 0 minutit 25 sekundit.
+Kogusid mängu jooksul 3 eset.
+Võitsid mängu.
+Ella:
+Tegid kokku 2 käiku mängu lõpetamiseks.
+Aega läks 0 minutit 3 sekundit.
+Kogusid mängu jooksul 0 eset.
+Kaotasid mängu.
+e:
+Tegid kokku 0 käiku mängu lõpetamiseks.
+Aega läks 0 minutit 1 sekundit.
+Kogusid mängu jooksul 0 eset.
+Kaotasid mängu.
