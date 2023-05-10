@@ -273,9 +273,11 @@ public class Mäng {
             käskeKokku++;
         }
 
+        //Mänguaja mõõtmiseks sissetoodud muutujad.
         long lõpuAeg = System.nanoTime();
         long kokkuAeg = lõpuAeg - algusAeg;
 
+        //Erinevad statistikad ühe mängu kohta.
         ArrayList<String> statistikad = new ArrayList<>();
         statistikad.add("Tegid kokku " + käskeKokku + " käiku mängu lõpetamiseks.");
         statistikad.add("Aega läks " + TimeUnit.MINUTES.convert(kokkuAeg, TimeUnit.NANOSECONDS) + " minutit " + TimeUnit.SECONDS.convert(kokkuAeg, TimeUnit.NANOSECONDS) + " sekundit.");
@@ -285,6 +287,7 @@ public class Mäng {
         else
             statistikad.add("Kaotasid mängu.");
 
+        //Lisame ja loeme statistika failidest.
         statistikaLisamine("statistika.txt", statistikad);
         Map<String, List<String>> statistikaFailist = loeStatistika("statistika.txt");
 
@@ -299,6 +302,12 @@ public class Mäng {
         System.out.println("Kõigi mängijate keskmine mänguaeg on: " + täisarv + " minutit ja " + Double.parseDouble(bigDecimal.subtract(new BigDecimal(täisarv)).setScale(1, RoundingMode.HALF_UP).toPlainString())*60 + " sekundit.");
     }
 
+    /** Meetod kirjutab faili statistika.txt (või muusse etteantud faili) statistika mängude kohta.
+     *
+     * @param fail Faili nimi.
+     * @param statistikad Erinevad statistikad.
+     * @throws IOException
+     */
     public static void statistikaLisamine(String fail, ArrayList<String> statistikad) throws IOException {
         String nimi;
         try (BufferedReader kasutajaSisend = new BufferedReader(new InputStreamReader(System.in))) {
@@ -316,6 +325,12 @@ public class Mäng {
         }
     }
 
+    /** Meetod loeb failist statistika.
+     *
+     * @param fail Etteantud fail, millest meetod lugema hakkab.
+     * @return Andmed kujul mängija nimi: mängija statistikad
+     * @throws IOException
+     */
     private static Map<String, List<String>> loeStatistika(String fail) throws IOException {
         Map<String, List<String>> andmed = new HashMap<>();
         String nimi = null;
@@ -330,16 +345,21 @@ public class Mäng {
                     nimi = rida;
                 try {if (andmed.get(nimi).size()>=5)
                     andmed.remove(nimi);} catch (Exception ignored) {}
-
                 if (!andmed.containsKey(nimi))
                     andmed.put(nimi, new ArrayList<>());
                 andmed.get(nimi).add(rida);
+                //Andmed on kujul nimi ... statistika 1 ... ... statistika 5, seega iga 5 rea tagant tuleb uus nimi.
                 if (luger == 5)
                     luger = 0;
             }
         }
     }
 
+    /** Meetod arvutab kõikide mängijate keskmise mänguaja.
+     *
+     * @param andmed Etteantud andmed.
+     * @return Keskmise mänguaja minutites ja sekundites.
+     */
     private static double keskmineMänguaeg(Map<String, List<String>> andmed) {
         double manguaeg=0;
         for (List<String> tulemused:andmed.values()) {
