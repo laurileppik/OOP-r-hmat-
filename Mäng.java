@@ -1,6 +1,5 @@
 import java.io.*;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -299,14 +298,13 @@ public class Mäng {
         double keskmineMänguAeg=keskmineMänguaeg(statistikaFailist);
         BigDecimal bigDecimal = new BigDecimal(String.valueOf(keskmineMänguAeg));
         int täisarv = bigDecimal.intValue();
-        System.out.println("Kõigi mängijate keskmine mänguaeg on: " + täisarv + " minutit ja " + Double.parseDouble(bigDecimal.subtract(new BigDecimal(täisarv)).setScale(1, RoundingMode.HALF_UP).toPlainString())*60 + " sekundit.");
+        System.out.println("Kõigi mängijate keskmine mänguaeg on: " + täisarv + " minutit ja " + Math.round((keskmineMänguAeg-täisarv)*60) + " sekundit.");
     }
 
     /** Meetod kirjutab faili statistika.txt (või muusse etteantud faili) statistika mängude kohta.
      *
      * @param fail Faili nimi.
      * @param statistikad Erinevad statistikad.
-     * @throws IOException
      */
     public static void statistikaLisamine(String fail, ArrayList<String> statistikad) throws IOException {
         String nimi;
@@ -329,7 +327,6 @@ public class Mäng {
      *
      * @param fail Etteantud fail, millest meetod lugema hakkab.
      * @return Andmed kujul mängija nimi: mängija statistikad
-     * @throws IOException
      */
     private static Map<String, List<String>> loeStatistika(String fail) throws IOException {
         Map<String, List<String>> andmed = new HashMap<>();
